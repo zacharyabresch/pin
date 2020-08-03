@@ -1,14 +1,23 @@
 [tool.poetry]
 name = "pin"
-version = "0.1.0"
-description = ""
+version = "0.0.1"
+description = "A CLI client for the Pinboard service"
 authors = ["Zach Abresch <zacharyab@zillowgroup.com>"]
+
+[tool.poetry.scripts]
+pin = "pin.main:main"
 
 [tool.poetry.dependencies]
 python = "^3.8"
+click = "^7.1.2"
+requests = "^2.24.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
+black = "^19.10b0"
+coverage = "^5.2.1"
+flake8 = "^3.8.3"
+isort = "^5.2.2"
 
 [build-system]
 requires = ["poetry>=0.12"]

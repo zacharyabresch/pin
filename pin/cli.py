@@ -1,4 +1,5 @@
 """CLI Module"""
+import os
 import click
 
 from .modules.logger import logger
@@ -6,6 +7,7 @@ from .modules.client import Client
 
 
 @click.group()
+@click.option("-c", "--config-file", default="~/.pinrc")
 @click.pass_context
 def cli(ctx):
     """CLI command group"""
@@ -13,8 +15,9 @@ def cli(ctx):
 
 
 @cli.command()
+@cli.argument("api_key")
 @click.pass_context
-def init(ctx):
+def init(ctx, api_key):
     """Initializes client"""
 
 
